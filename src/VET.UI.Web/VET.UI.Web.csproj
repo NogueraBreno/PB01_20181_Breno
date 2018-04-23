@@ -18,4 +18,9 @@
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.3" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\VET.ApplicationCore\VET.ApplicationCore.csproj" />
+    <ProjectReference Include="..\VET.Infrastructure\VET.Infrastructure.csproj" />
+  </ItemGroup>
+
 </Project>
