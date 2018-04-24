@@ -11,9 +11,10 @@ using VET.Infrastructure.Data;
 namespace VET.Infrastructure.Migrations
 {
     [DbContext(typeof(ClienteContext))]
-    partial class ClienteContextModelSnapshot : ModelSnapshot
+    [Migration("20180424040832_AddEndereco")]
+    partial class AddEndereco
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -25,15 +26,11 @@ namespace VET.Infrastructure.Migrations
                     b.Property<int>("ClienteId")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("Email")
-                        .IsRequired()
-                        .HasColumnType("varchar(100)");
+                    b.Property<string>("Email");
 
                     b.Property<int>("EnderecoId");
 
-                    b.Property<string>("Nome")
-                        .IsRequired()
-                        .HasColumnType("varchar(50)");
+                    b.Property<string>("Nome");
 
                     b.HasKey("ClienteId");
 
@@ -45,22 +42,17 @@ namespace VET.Infrastructure.Migrations
                     b.Property<int>("EnderecoId")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("Bairro")
-                        .HasColumnType("varchar(50)");
+                    b.Property<string>("Bairro");
 
-                    b.Property<string>("CEP")
-                        .IsRequired()
-                        .HasColumnType("varchar(11)");
+                    b.Property<string>("CEP");
 
                     b.Property<int>("ClienteId");
 
                     b.Property<int?>("ClienteId1");
 
-                    b.Property<string>("Logradouro")
-                        .HasColumnType("varchar(50)");
+                    b.Property<string>("Logradouro");
 
-                    b.Property<string>("Numero")
-                        .HasColumnType("varchar(10)");
+                    b.Property<string>("Numero");
 
                     b.HasKey("EnderecoId");
 

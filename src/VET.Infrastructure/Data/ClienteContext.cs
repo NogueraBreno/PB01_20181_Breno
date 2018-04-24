@@ -17,7 +17,33 @@ namespace VET.Infrastructure.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Cliente>().ToTable("Tb_cliente");
+            modelBuilder.Entity<Cliente>().ToTable("Cliente");
+            modelBuilder.Entity<Endereco>().ToTable("Endereco");
+
+            #region Cliente
+            modelBuilder.Entity<Cliente>().Property(e => e.Nome)
+                .HasColumnType("varchar(50)")
+                .IsRequired();
+            modelBuilder.Entity<Cliente>().Property(e => e.Email)
+                .HasColumnType("varchar(100)")
+                .IsRequired();
+            #endregion
+
+            #region Endereco
+            modelBuilder.Entity<Endereco>().Property(e => e.CEP)
+                .HasColumnType("varchar(11)")
+                .IsRequired();
+
+            modelBuilder.Entity<Endereco>().Property(e => e.Bairro)
+                .HasColumnType("varchar(50)");
+
+            modelBuilder.Entity<Endereco>().Property(e => e.Logradouro)
+                .HasColumnType("varchar(50)");
+
+            modelBuilder.Entity<Endereco>().Property(e => e.Numero)
+                .HasColumnType("varchar(10)");
+
+            #endregion
 
         }
 
