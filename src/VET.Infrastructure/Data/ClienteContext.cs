@@ -2,11 +2,12 @@
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
-using System.Text; 
+using System.Text;
+using VET.ApplicationCore.Entity;
 
 namespace VET.Infrastructure.Data
 {
-    class ClienteContext : DbContext
+    public class ClienteContext : DbContext
     {
         public ClienteContext(DbContextOptions<ClienteContext> options) : base(options)
         {
