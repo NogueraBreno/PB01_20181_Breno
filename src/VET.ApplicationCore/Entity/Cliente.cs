@@ -14,6 +14,8 @@ namespace VET.ApplicationCore.Entity
         public string Nome { get; set; }
         public string Email { get; set; }
         public int EnderecoId { get; set; }
+        public Endereco Endereco { get; set; }
+
 
 
     }

@@ -21,9 +21,18 @@ namespace VET.Infrastructure.Data
             modelBuilder.Entity<Endereco>().ToTable("Endereco");
 
             #region Cliente
+
+            modelBuilder.Entity<Cliente>()
+                .HasKey(c => c.ClienteId);
+
+            modelBuilder.Entity<Cliente>()
+               .HasOne(c => c.Endereco)
+               .WithOne(c => c.Cliente);
+
             modelBuilder.Entity<Cliente>().Property(e => e.Nome)
                 .HasColumnType("varchar(50)")
                 .IsRequired();
+
             modelBuilder.Entity<Cliente>().Property(e => e.Email)
                 .HasColumnType("varchar(100)")
                 .IsRequired();
