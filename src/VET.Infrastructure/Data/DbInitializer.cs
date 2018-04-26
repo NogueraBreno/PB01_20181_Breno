@@ -52,6 +52,68 @@ namespace VET.Infrastructure.Data
 
             context.AddRange(enderecos);
 
+
+            var animais = new Animal[]
+            {
+                new Animal
+                {
+                    Idade = 2,
+                    Genero = "M",
+                    Nome = "Shaman",
+                    Cliente = clientes[0]
+                },
+
+                new Animal
+                {
+                    Idade = 1,
+                    Genero = "F",
+                    Nome = "Lyria",
+                    Cliente = clientes[1]
+                }
+
+            };
+
+            context.AddRange(animais);
+
+            var especies = new Especie[]
+            {
+
+                new Especie
+                {
+                    Descricao = "Pastor Alemão"
+
+                },
+
+                new Especie
+                {
+
+                    Descricao = "RedHeeler"
+                }
+
+
+            };
+
+            context.AddRange(especies);
+
+            var consultas = new Consulta[]
+            {
+                new Consulta
+                {
+                    Data  = "01/04/2018",
+                    Observacao = "Vacina anti rabica"
+                },
+
+                new Consulta
+                {
+                    Data  = "02/04/2018",
+                    Observacao = "Ressonancia magnetica"
+
+                }
+
+            };
+
+            context.AddRange(consultas);
+
             context.SaveChanges();
 
 

@@ -15,6 +15,7 @@ namespace VET.ApplicationCore.Entity
         public string Email { get; set; }
         public int EnderecoId { get; set; }
         public Endereco Endereco { get; set; }
+        public ICollection<Animal> animais { get; set; }
 
 
 
