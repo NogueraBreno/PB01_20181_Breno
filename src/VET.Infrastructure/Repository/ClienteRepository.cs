@@ -19,12 +19,12 @@ namespace VET.Infrastructure.Repository
         }       
 
 
-        public override Cliente Adicionar(Cliente endity)
+        public override Cliente Adicionar(Cliente entity)
         {
             var verificarResultado = "";
-            _dbContext.Set<Cliente>().Add(endity);
+            _dbContext.Set<Cliente>().Add(entity);
             _dbContext.SaveChanges();
-            return endity;
+            return entity;
         }
 
         public Cliente ObterPorAnimais(int clienteId)

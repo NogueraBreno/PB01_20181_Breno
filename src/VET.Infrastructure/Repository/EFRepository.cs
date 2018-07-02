@@ -19,18 +19,18 @@ namespace VET.Infrastructure.Repository
         }
 
 
-        public virtual TEndity Adicionar(TEndity endity)
+        public virtual TEndity Adicionar(TEndity entity)
         {
 
-            _dbContext.Set<TEndity>().Add(endity);
+            _dbContext.Set<TEndity>().Add(entity);
             _dbContext.SaveChanges();
-            return endity;
+            return entity;
 
         }
 
-        public void Atualizar(TEndity endity)
+        public void Atualizar(TEndity entity)
         {
-            _dbContext.Entry(endity).State = EntityState.Modified;
+            _dbContext.Entry(entity).State = EntityState.Modified;
             _dbContext.SaveChanges();
                     }
 
@@ -49,9 +49,9 @@ namespace VET.Infrastructure.Repository
             return _dbContext.Set<TEndity>().AsEnumerable();
         }
 
-        public void Remover(TEndity endity)
+        public void Remover(TEndity entity)
         {
-            _dbContext.Set<TEndity>().Remove(endity);
+            _dbContext.Set<TEndity>().Remove(entity);
             _dbContext.SaveChanges();
 
         }
