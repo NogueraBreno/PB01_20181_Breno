@@ -19,8 +19,9 @@ namespace VET.Infrastructure.Repository
         }
 
 
-        public TEndity Adicionar(TEndity endity)
+        public virtual TEndity Adicionar(TEndity endity)
         {
+
             _dbContext.Set<TEndity>().Add(endity);
             _dbContext.SaveChanges();
             return endity;

@@ -33,7 +33,7 @@ namespace VET.Infrastructure.Data
                .WithOne(c => c.Cliente);
 
             modelBuilder.Entity<Cliente>()
-                .HasMany(a => a.animais)
+                .HasMany(a => a.Animais)
                 .WithOne(a => a.Cliente);
 
                
